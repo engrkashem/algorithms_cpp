@@ -5,7 +5,7 @@ class Solution {
 private:
     int solve(vector<int>& cost, vector<int>& dp, int n){
         //base case
-        if(n==0)return 0;
+        if(n<0)return 0;
         if(n==1 || n==0)return cost[n];
 
         if(dp[n]!=-1)return dp[n];
@@ -17,7 +17,7 @@ private:
 public:
     int minCostClimbingStairs(vector<int>& cost) {
         int len=cost.size();
-        if(len<=1)return 0;
+        //if(len<=1)return 0;
         vector<int>dp;
         for(int i=0; i<=len; i++){
             dp.push_back(-1);
